@@ -1,0 +1,33 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%= phone.model %></div>
+    <div class="ui inverted grey segment">
+        <form class="ui inverted form" action="/phones/<%= phone._id %>?_method=PUT" method="POST">
+            <div class="field">
+                <label>Model</label>
+                <input type="text" name="phone[model]" value="<%= phone.model %>">
+            </div>
+            <div class="field">
+                <label>Image</label>
+                <input type="text" name="phone[image]" value="<%= phone.image %>">
+            </div>
+            <div class="field">
+                <label>Price</label>
+                <input type="text" name="phone[price]" value="<%= phone.price %>">
+            </div>
+            <div class="field">
+                <label>Specification</label>
+                <textarea name="phone[body]"><%= phone.body %></textarea>
+            </div>
+            <button class="ui inverted green animated big button" tabindex="0">
+                <div class="visible content ui inverted green">Update</div>
+                <div class="hidden content">
+                    <i class="right arrow icon"></i>
+                </div>
+            </button> 
+        </form>
+    </div>
+</div>
+
+<% include partials/footer %>

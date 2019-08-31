@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+  <div class="ui huge header"><%= phone.model %></div>
+  <h4 class="ui teal header"><i class="calendar alternate outline icon"></i>Posted: <%= phone.posted.toDateString() %></h4>
+  <img class="ui centered fluid rounded image" src="<%= phone.image %>">
+  <h3 class="ui center aligned teal header">৳ <%= phone.price %></h3>
+  <h4><%- phone.body %></h4>
+  <a class="ui black button" href="/phones/<%= phone._id %>/edit"><i class="edit outline icon"></i> Edit</a>
+  <form id="delete" action="/phones/<%= phone._id %>?_method=DELETE" method="POST">
+    <button class="negative ui button">Delete</button>
+  </form>
+
+  <% include partials/footer %>

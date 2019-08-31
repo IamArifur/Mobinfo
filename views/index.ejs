@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="ui main intro container">
+    <h3 class="ui dividing center aligned icon header">
+        <i class="mobile icon"></i>
+        <div class="content">
+            Trending Phones
+        </div>
+    </h3>
+    <div class="ui four stackable doubling cards">
+        <% for (let phone of phones) { %>
+        <div class="card">
+            <div class="image">
+                <img src="<%= phone.image %>">
+            </div>
+            <div class="content">
+                <a class="header center aligned ui teal"><%= phone.model %></a>
+                <div class="center aligned  ui grey">
+                    <span class="date">৳ <%= phone.price %> </span>
+                </div>
+            </div>
+            <div class="extra content">
+                <span><%= phone.posted.toDateString() %></span>
+                <a class="ui inverted green animated small right floated button" tabindex="0"
+                    href="/phones/<%= phone._id %>">
+                    <div class="visible content ui inverted green">More Info</div>
+                    <div class="hidden content">
+                        <i class="right arrow icon"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <% } %>
+    </div>
+</div>
+
+<% include partials/footer %>

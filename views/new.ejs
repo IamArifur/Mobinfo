@@ -1,0 +1,33 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Add phone</div>
+    <div class="ui inverted grey segment">
+        <form class="ui inverted form" action="/phones" method="POST">
+            <div class="field">
+                <label>Model</label>
+                <input type="text" name="phone[model]" placeholder="model">
+            </div>
+            <div class="field">
+                <label>Image</label>
+                <input type="text" name="phone[image]" placeholder="image">
+            </div>
+            <div class="field">
+                <label>Price</label>
+                <input type="text" name="phone[price]" placeholder="৳">
+            </div>
+            <div class="field">
+                <label>Specification</label>
+                <textarea name="phone[body]"></textarea>
+            </div>
+            <button class="ui inverted green animated big button" tabindex="0">
+                <div class="visible content ui inverted green">Submit</div>
+                <div class="hidden content">
+                    <i class="right arrow icon"></i>
+                </div>
+            </button> 
+        </form>
+    </div>
+</div>
+
+<% include partials/footer %>
